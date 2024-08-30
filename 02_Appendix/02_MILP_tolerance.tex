@@ -1,0 +1,12 @@
+\section{MILP tolerance} \label{app:MILP}
+In this Appendix, the impact of the modeling of the electrolysers with SOS2 variables is evaluated. The objective is to check that the operating points of the electrolysers on the obtained results do not deviate from the operating curve of \autoref{fig:ely_operating_range}. The gap between operating point given by the EMS and operating curve is calculated with Equation (\ref{eq:L2}). \autoref{fig:ely_gap} provides a visual representation of the gap, demonstrating that only a few operating points are significantly outside the allowed range. 
+\begin{equation*}
+     \text{Gap}_t = \textbf{L}_\textbf{t}^{\textbf{(k,elec)}} \cdot \alpha_i^{(k)} - \textbf{l}_\textbf{t}^{\textbf{(k,state)}} \cdot \beta_i^{(k)} - \textbf{L}_\textbf{t}^{\textbf{(k,H$_2$)}}
+\end{equation*}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=10cm]{02_Appendix/MILP_tolerance_boxplot.pdf}\\
+    \caption{Absolute gap between operation range of electrolyser and operating point of the EMS}
+    \label{fig:ely_gap}
+\end{figure} 

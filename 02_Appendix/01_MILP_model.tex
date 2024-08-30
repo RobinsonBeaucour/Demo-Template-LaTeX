@@ -1,0 +1,18 @@
+\section{MILP models} \label{app:model}
+The present Appendix describes the MILP modeling for the renewable production, grid, converters, compressors and storage.
+\subsection{Renewable production} \label{Renewable_production}
+
+PV and wind production are modeled with capacity factor time series considered as inputs for the optimization problem. Thus, no decision variables are related to renewable production.
+
+\subsection{Grid Flow} \label{Grid_Flow} \label{eq:F}
+Local electricity grid can consume (related to \textit{ElecCons}) or inject (related to \textit{ElecInj}) electricity from/to the global electricity grid. The local $H_2$ grid can sell $H_2$ (related to \textit{$H_2$sold}). If the platform does not satisfy production or $CO_2$ constraints (see Section \ref{specific_constraints}), it can "buy" expensive external green $H_2$ (related to \textit{$H_2$pen}). \textit{$H_2$pen} can be interpreted as a penalty to prevent unfeasabilty during the platform operation. Equations (\ref{eq:F1}) and (\ref{eq:F2}) set hourly cost and $CO_2$ emissions for each flow, system and instant. Equation (\ref{eq:F3}) sets flow constraints related to infrastructures limitation.
+
+\begin{equation} \tag{F.1} \label{eq:F1}
+    \textbf{F}_\textbf{t}^{\textbf{(sys,cost)}} = F^{(sys,sens)} \cdot F_t^{(sys,prices)} \cdot \textbf{F}_\textbf{t}^{\textbf{(sys,flow)}}
+\end{equation}
+\begin{equation} \tag{F.2} \label{eq:F2}
+    \textbf{F}_t^{(sys,CO2)} = F^{(sys,CO_2)} \cdot \textbf{F}_\textbf{t}^{\textbf{(sys,flow)}}
+\end{equation}
+\begin{equation} \tag{F.3} \label{eq:F3}
+    F^{(sys,min)} \leq \textbf{F}_\textbf{t}^{\textbf{(sys,flow)}} \leq F^{(sys,max)}
+\end{equation}

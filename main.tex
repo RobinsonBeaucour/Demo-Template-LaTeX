@@ -1,0 +1,64 @@
+\documentclass[authoryear,preprint,12pt]{elsarticle}
+
+% Load necessary packages
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{natbib}
+\usepackage{csquotes}
+\usepackage{stmaryrd}
+\usepackage{mathtools,amsfonts,amssymb,setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array} 
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{ragged2e}
+\usepackage{textgreek}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{lipsum}
+\usepackage{titlesec}
+
+\begin{document}
+
+\title{Operational long-term management of a salt cavern for industry targeted green H2 production}
+
+\author{First Name Last Name}
+\ead{youremail@example.com}
+
+\address{Paris-Saclay University}
+
+\begin{abstract}
+    An abstract to paste
+\end{abstract}
+
+\begin{keyword}
+keyword1 \sep keyword2 \sep keyword3
+\end{keyword}
+
+\maketitle
+
+\clearpage
+\section{Introduction}
+\label{Intro}
+
+TEST TEST
+\input{01_Sections/01_Introduction/01_context.tex}
+
+\input{01_Sections/01_Introduction/02_state_of_the_art.tex}
+
+\section{System investigated and methods}
+\input{01_Sections/02_Methods/01_modeling_approach.tex}
+
+\clearpage
+\appendix
+
+\input{02_Appendix/01_MILP_model.tex}
+
+\input{02_Appendix/02_MILP_tolerance.tex}
+
+\bibliographystyle{elsarticle-num-names}
+\bibliography{ref}
+
+\end{document}

@@ -1,0 +1,32 @@
+\subsection{Modeling approach} \label{Models}
+
+The platform is modeled using a MILP formulation. The nomenclature of parameters and decision variables are described in \autoref{tab:system_parameters_and_DV}.
+It uses the indice $sys$ for each type of system, with the set of indices for each type of system being described in \autoref{tab:system_description}.
+The MILP modeling for the renewable production, grid, converters, compressors and storage is rather common and thus described in \ref{app:model}. As detailed in \ref{app:model}, the grid, converters, compressors and storage sets of equations are respectively denoted \textit{F}, \textit{C}, \textit{K} and \textit{S}.
+
+\begin{table*}
+    \centering
+    \tiny
+    \caption{Parameters and decision variables}
+    \begin{tabular}{|p{3.5cm}p{6.5cm}p{5cm}|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{(L) Electrolyser}} \\[0.3cm]
+    $L^{(k,max/min)}$                   & Max/Min power of the $k^{th}$ electrolyser                                        & $[MW]$ \\
+    $L^{(k,AuxBase)}$                   & Base electricity consumption of the $k^{th}$ electrolyser                         & $[MW]$ \\
+    $L^{(k,AuxMarg)}$                   & Marginal electricity consumption rate of the $k^{th}$ electrolyser                &  \\
+    $L_i^{(k,elec)}$                    & electricity $i^{th}$ operating point of the $k^{th}$ electrolyser                 & $[MW]$ \\
+    $L_i^{(k,H_2)}$                     & $H_2$ flow $i^{th}$ operating point of the $k^{th}$ electrolyser                  & $[tH_2/h]$ \\[0.3cm]
+    $\textbf{L}_\textbf{t}^{\textbf{(k,elec)}}$           & Electricity consumption of the $k^{th}$ electrolyser at $t$ for $H_2$             & $[MW]$ \\
+    $\textbf{L}_\textbf{t}^{\textbf{(k,H$_2$)}}$            & $H_2$ flow production of the $k^{th}$ electrolyser at $t$                         & $[tH_2/h]$ \\
+    $\textbf{L}_\textbf{t}^{\textbf{(k,total)}}$          & Total electricity consumption of the $k^{th}$ electrolyser at $t$                 & $[MW]$ \\
+    $\textbf{l}_\textbf{t}^{\textbf{(k,state)}}$          & State of the $k^{th}$ electrolyser at $t$ : 1 if turnd on else 0                  & $[MW]$ \\[0.3cm]
+    \multicolumn{3}{|c|}{\textbf{Global parameters}} \\[0.3cm]
+    $M^{(CO_2)}$                    & Maximum hourly $CO_2$ intensity of $H_2$ sold                                         & $[tCO_2/tH_2]$ \\
+    $m^{(H_2)}$                     & Minimum hourly $H_2$ sold quantity                                                    & $[tH_2/h]$ \\
+    $\Delta$                        & Duration of rolling constraints                                                       & $[h]$ \\
+    $\delta_t$                      & Duration of instant $t$                                                               & $[h]$ \\
+    $N_{ely}$                       & Number of electrolysers modules                                                       & \\
+    \hline     
+    \end{tabular}
+    \label{tab:system_parameters_and_DV}
+\end{table*}
